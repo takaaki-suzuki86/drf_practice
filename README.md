@@ -1,1 +1,1 @@
-# drf_practice
+# drf-practice

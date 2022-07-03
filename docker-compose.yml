@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  engage-user-api:
+    build: .
+#        build:
+#            context: .
+#            dockerfile: ./docker/web/Dockerfile
+    container_name: config-user-api
+#    command: python3 ./config/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "3000:8000"
+      - "5678:5678"
+    tty: true
+#    env_file:
+#      - local.env
+networks:
+    default:
+        external:
+            name: config-user
