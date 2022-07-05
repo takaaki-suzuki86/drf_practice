@@ -1,4 +1,4 @@
-FROM python:3.11.0b3
+FROM python:3.10.5
 
 # 標準出力・標準エラーのストリームのバッファリングを行わない
 ENV PYTHONUNBUFFERED 1

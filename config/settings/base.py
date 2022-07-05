@@ -13,25 +13,24 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-cc4i1wju9th3h0y-x@*u$c#%s%+7it)#0u3te_nt@)@l2u^m44'
+# SECRET_KEY = 'django-insecure-cc4i1wju9th3h0y-x@*u$c#%s%+7it)#0u3te_nt@)@l2u^m44'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    # 'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,16 +80,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    # "mysql": {
-    #     "ENGINE": "django.db.backends.mysql",
-    #     "NAME": "config",
-    #     # "HOST": "host.docker.internal",
-    #     "HOST": "dev.config-user.db",
-    #     "PORT": 54321,
-    #     "ATOMIC_REQUESTS": True,
-    #     "PASSWORD": 'Passw0rd',
-    #     "USER": "root",
-    # }
 }
 
 
@@ -116,12 +105,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "ja"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "Asia/Tokyo"
 
 USE_I18N = True
 
+# USE_TZ = False
 USE_TZ = True
 
 

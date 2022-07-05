@@ -7,3 +7,5 @@ class QuestionSerializer(serializers.ModelSerializer):
         model = Question
         fields = ('question_text', 'pub_date', 'id')
         read_only_fields = ('id',)
+
+
