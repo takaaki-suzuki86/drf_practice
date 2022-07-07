@@ -1,14 +1,12 @@
 import logging
 
 from rest_framework import viewsets
+from rest_framework.parsers import JSONParser
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from ..models import Question
 from .serializer import QuestionSerializer
-from rest_framework import mixins
-from rest_framework.views import APIView
-from rest_framework.parsers import FormParser, MultiPartParser
-from rest_framework.response import Response
-from rest_framework.parsers import JSONParser
-
 
 # Create your views here.
 
@@ -19,3 +17,24 @@ class QuestionViewSet(viewsets.ModelViewSet):
     # シリアライザーを取得
     serializer_class = QuestionSerializer
 
+
+class LineUsersView(APIView):
+    # parser_classes = [FormParser, MultiPartParser]
+    parser_classes = [JSONParser]
+
+    def get(self, request):
+        logger = logging.getLogger(__name__)
+        logger.info(__name__)
+        logger.info("Hello world!")
+        return Response(
+            {
+                "totalCount": "aaa",
+            }
+        )
+
+    def post(self, request):
+        return Response(
+            {
+                "totalCount": "aaa",
+            }
+        )

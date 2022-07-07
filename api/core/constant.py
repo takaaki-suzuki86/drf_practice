@@ -8,4 +8,3 @@ class MethodType(Enum):
         "3": "PUT",
         "4": "DELETE",
     }
-

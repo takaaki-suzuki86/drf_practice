@@ -20,5 +20,5 @@ urlpatterns = [
     path("", HttpResponse),
     # path('polls/', include('polls.urls')),
     # path(r'api/v1/', include(urls)),
-    path(r'api/v1/', include('api.urls')),
+    path(r"api/v1/", include("api.urls")),
 ]
