@@ -197,10 +197,18 @@ category = "main"
 optional = false
 python-versions = ">=2"
 
+[[package]]
+name = "uwsgi"
+version = "2.0.20"
+description = "The uWSGI server"
+category = "main"
+optional = false
+python-versions = "*"
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "8f636ff31b24fbb7f9ba283d89e59fd2523031ce405002d96568881e4013cbad"
+content-hash = "e5ce892fb890e11fb2b1a109106035e0657d128d6ab13162fd3352a37266dd90"
 
 [metadata.files]
 asgiref = [
@@ -304,4 +312,7 @@ tomli = [
 tzdata = [
     {file = "tzdata-2022.1-py2.py3-none-any.whl", hash = "sha256:238e70234214138ed7b4e8a0fab0e5e13872edab3be586ab8198c407620e2ab9"},
     {file = "tzdata-2022.1.tar.gz", hash = "sha256:8b536a8ec63dc0751342b3984193a3118f8fca2afe25752bb9b7fffd398552d3"},
+]
+uwsgi = [
+    {file = "uwsgi-2.0.20.tar.gz", hash = "sha256:88ab9867d8973d8ae84719cf233b7dafc54326fcaec89683c3f9f77c002cdff9"},
 ]
