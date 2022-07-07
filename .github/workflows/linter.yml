@@ -1,0 +1,47 @@
+name: Linters
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+      - 'hotfix/*'
+
+jobs:
+
+  lint-and-test:
+    name: Linters
+
+    if: contains(github.event.head_commit.message, '[skip ci]') == false
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+
+      - name: Get poetry
+        run: |
+          wget https://bootstrap.pypa.io/get-pip.py && \
+          python get-pip.py && \
+          rm get-pip.py
+
+      - name: Install dependencies
+        run: |
+          pip install poetry && \
+          poetry config virtualenvs.create false && \
+          poetry install
+
+      - name: Check having formatted by isort
+        run: isort --check --diff api config manage.py
+
+      - name: Check having formatted by black
+        run: black --check api config manage.py
+
+      - name: Lint by flake8
+        run: flake8 api config manage.py
