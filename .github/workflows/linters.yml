@@ -38,6 +38,16 @@ jobs:
         with:
           linters: isort
           run: isort --check --diff api config manage.py
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: black
+        uses: psf/black@stable
+        with:
+          linters: black
+          run: black --check api config manage.py
 
 #  lint-and-test:
 #    name: Linters
