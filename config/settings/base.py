@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "api.apps.ApiConfig",
+    "health_check",  # required
+    # 'health_check.db',  # DBはマイグレーション済み前提
+    # 'health_check.storage',
+    "health_check.contrib.psutil",  # disk and memory utilization; requires psutil
 ]
 
 MIDDLEWARE = [
